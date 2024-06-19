@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beer Directory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">Map</a>
+        <a href="directory.html">Directory</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+    <h1>Beer Directory</h1>
+    <div id="filters">
+        <label for="beer-type">Type:</label>
+        <select id="beer-type">
+            <option value="all">All</option>
+            <option value="Pilsner">Pilsner</option>
+            <option value="IPA">IPA</option>
+            <option value="Porter">Porter</option>
+            <option value="Lager">Lager</option>
+        </select>
+    </div>
+    <div id="beer-list"></div>
+    <script src="breweries.js"></script>
+    <script src="directory.js"></script>
+</body>
+</html>

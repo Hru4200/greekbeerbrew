@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Manage Breweries</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Admin Panel</h1>
+
+    <div id="brewery-list" class="popup" style="display:block;">
+        <div class="popup-header">
+            <h2>Existing Breweries</h2>
+        </div>
+        <div class="popup-content">
+            <ul id="brewery-list-content"></ul>
+        </div>
+    </div>
+
+    <div id="brewery-form" class="popup" style="display:block;">
+        <div class="popup-header">
+            <h2>Add/Update Brewery</h2>
+        </div>
+        <div class="popup-content">
+            <form id="new-brewery-form">
+                <label for="brewery-id">ID (for updating):</label>
+                <input type="text" id="brewery-id" name="brewery-id" readonly><br>
+                <label for="brewery-name">Name:</label>
+                <input type="text" id="brewery-name" name="brewery-name" required><br>
+                <label for="brewery-lat">Latitude:</label>
+                <input type="text" id="brewery-lat" name="brewery-lat" required><br>
+                <label for="brewery-lng">Longitude:</label>
+                <input type="text" id="brewery-lng" name="brewery-lng" required><br>
+                <label for="brewery-year">Year Founded:</label>
+                <input type="text" id="brewery-year" name="brewery-year" required><br>
+                <label for="brewery-founder">Founder:</label>
+                <input type="text" id="brewery-founder" name="brewery-founder" required><br>
+                <label for="brewery-owner">Owner:</label>
+                <input type="text" id="brewery-owner" name="brewery-owner" required><br>
+                <label for="brewery-categories">Beer Categories (comma separated):</label>
+                <input type="text" id="brewery-categories" name="brewery-categories" required><br>
+                <label for="brewery-logo">Logo URL:</label>
+                <input type="text" id="brewery-logo" name="brewery-logo" required><br>
+                
+                <h3>Beers</h3>
+                <div id="beer-list"></div>
+                <button type="button" id="add-beer-btn">Add Beer</button><br>
+                
+                <button type="submit">Add/Update Brewery</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Basic Authentication
+        const username = prompt("Enter username:");
+        const password = prompt("Enter password:");
+
+        if (username !== "admin" || password !== "password") {
+            document.body.innerHTML = "<h1>Unauthorized Access</h1>";
+        }
+    </script>
+    <script src="breweries.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
